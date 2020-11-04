@@ -3,41 +3,55 @@ package example.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import example.dto.Member;
+import example.member.Member;
 
 public class MemberDao {
-	private List<Member> members;
+
 	private int lastId;
-	
-	public MemberDao(){
-		members = new ArrayList<>();
+	private List<Member> members;
+
+	public MemberDao() {
 		lastId = 0;
-		
-		for (int i = 0; i < 3; i++) {
-			join("user"+i, "user"+i, "user"+i);
-		}
+		members = new ArrayList<>();
+
+		memberTest();
 	}
-	
+
+	private void memberTest() {
+		join("aaa", "aaa", "aaa");
+		join("bbb", "bbb", "bbb");
+	}
+
 	public int join(String loginId, String loginPw, String name) {
 		Member member = new Member();
-		
-		member.id = lastId +1;
+
+		member.id = lastId + 1;
 		member.loginId = loginId;
 		member.loginPw = loginPw;
 		member.name = name;
-		lastId = member.id;
-		
+
 		members.add(member);
-		
+		lastId = member.id;
+
 		return member.id;
 	}
 
 	public Member getMemberByLoginId(String loginId) {
 		for (Member member : members) {
-			if(member.loginId.equals(loginId)) {
+			if (member.loginId.equals(loginId)) {
 				return member;
 			}
 		}
 		return null;
 	}
+
+	public Member getMemberById(int id) {
+		for(Member member : members) {
+			if(member.id == id) {
+				return member;
+			}
+		}
+		return null;
+	}
+
 }

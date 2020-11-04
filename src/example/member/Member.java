@@ -1,4 +1,4 @@
-package example.dto;
+package example.member;
 
 public class Member {
 	
