@@ -3,21 +3,21 @@ package example.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import example.member.Member;
+import example.dto.Member;
 
 public class MemberDao {
 
-	private int lastId;
 	private List<Member> members;
+	private int lastId;
 
 	public MemberDao() {
-		lastId = 0;
 		members = new ArrayList<>();
+		lastId = 0;
 
-		memberTest();
+		testMember();
 	}
 
-	private void memberTest() {
+	private void testMember() {
 		join("aaa", "aaa", "aaa");
 		join("bbb", "bbb", "bbb");
 	}
@@ -31,12 +31,12 @@ public class MemberDao {
 		member.name = name;
 
 		members.add(member);
-		lastId = member.id;
 
+		lastId = member.id;
 		return member.id;
 	}
 
-	public Member getMemberByLoginId(String loginId) {
+	public Member getMemberByloginId(String loginId) {
 		for (Member member : members) {
 			if (member.loginId.equals(loginId)) {
 				return member;
@@ -45,13 +45,12 @@ public class MemberDao {
 		return null;
 	}
 
-	public Member getMemberById(int id) {
-		for(Member member : members) {
-			if(member.id == id) {
+	public Member getMemberById(int loginedMemberId) {
+		for (Member member : members) {
+			if (member.id == loginedMemberId) {
 				return member;
 			}
 		}
 		return null;
 	}
-
 }

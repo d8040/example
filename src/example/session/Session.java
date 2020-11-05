@@ -3,9 +3,13 @@ package example.session;
 public class Session {
 
 	public int loginedMemberId;
+	public int articledId;
 
 	public boolean isLogined() {
-		return loginedMemberId != 0;
+		if(loginedMemberId != 0) {
+			return true;
+		}
+		return false;
 	}
 
 	public void logout() {

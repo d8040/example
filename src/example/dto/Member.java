@@ -1,10 +1,10 @@
-package example.member;
+package example.dto;
 
 public class Member {
 	
-	public int id;
 	public String loginId;
 	public String loginPw;
 	public String name;
+	public int id;
 
 }
