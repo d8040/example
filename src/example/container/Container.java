@@ -30,7 +30,6 @@ public class Container {
 		articleService = new ArticleService();
 		memberController = new MemberController();
 		articleController = new ArticleController();
-		
 	}
 
 }

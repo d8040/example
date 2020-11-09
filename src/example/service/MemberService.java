@@ -7,21 +7,21 @@ import example.dto.Member;
 public class MemberService {
 
 	private MemberDao memberDao;
-	
+
 	public MemberService() {
 		memberDao = Container.memberDao;
 	}
 
-	public int join(String loginId, String loginPw, String name) {		
+	public int join(String loginId, String loginPw, String name) {
 		return memberDao.join(loginId, loginPw, name);
 	}
 
-	public Member getMemberByloginId(String loginId) {
-		return memberDao.getMemberByloginId(loginId);
+	public Member getMemberByLoginId(String loginId) {
+		return memberDao.getMemberByLoginId(loginId);
 	}
 
-	public Member getMemberById(int loginedMemberId) {
-		return memberDao.getMemberById(loginedMemberId);
+	public Member getMemberById(int loginedId) {
+		return memberDao.getMemberById(loginedId);
 	}
 
 }
